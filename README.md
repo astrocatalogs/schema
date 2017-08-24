@@ -1,4 +1,5 @@
-#Open Astronomy Catalog Schema v0.1
+# Open Astronomy Catalog Schema v0.1
+
 This document describes the standard Open Astronomy Catalog (OSC) JSON schema.
 
 Each object should be contained with a single JSON file that contains a single object bearing the object's primary name, which when empty represents the minimum readable entry file:
