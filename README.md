@@ -1,6 +1,6 @@
 # Open Astronomy Catalog Schema v0.1
 
-This document describes the standard Open Astronomy Catalog (OSC) JSON schema.
+This document describes the standard Open Astronomy Catalog (OAC) JSON schema.
 
 Each object should be contained with a single JSON file that contains a single object bearing the object's primary name, which when empty represents the minimum readable entry file:
 
@@ -55,7 +55,7 @@ The sources object contains an array of such objects:
 ]
 ```
 
-The OSC stores many different pieces of metadata for each event. Data quantities are added to each event as arrays of objects, with each piece of datum being tagged with its associated sources' alias tags. As an example a redshift object array may look like:
+The OAC schema stores many different pieces of metadata for each event. Data quantities are added to each event as arrays of objects, with each piece of datum being tagged with its associated sources' alias tags. As an example a redshift object array may look like:
 
 ```JSON
 "redshift":[
@@ -74,7 +74,7 @@ The OSC stores many different pieces of metadata for each event. Data quantities
 ]
 ```
 
-where in this example we have two different redshift values quoted from three different sources, where two of the sources agree with one another, and the third source actually refers to the redshift of the host galaxy rather than the supernova. Note that all the numerical quantities are stored as strings instead of as numbers, the OSC's policy is to store the data with exactly the same number of significant digits as the sources that provide them, and storing the importing the data as floating point numbers can often introduce small floating-point errors that we wish to avoid.
+where in this example we have two different redshift values quoted from three different sources, where two of the sources agree with one another, and the third source actually refers to the redshift of the host galaxy rather than the supernova. Note that all the numerical quantities are stored as strings instead of as numbers, the OAC's policy is to store the data with exactly the same number of significant digits as the sources that provide them, and storing the importing the data as floating point numbers can often introduce small floating-point errors that we wish to avoid.
 
 In general, the data stored in a given JSON file are presented in the observer frame, uncorrected for extinction or redshift, with times provided in MJD or as a calendar date (YYYY/MM/DD). In some instances, only corrected data will be available, or will be available as a supplement to the raw data, but in these cases the corrected data should be tagged with additional qualifiers (e.g. `kcorrected`, `deredshifted`, etc.) to indicate that it has been manipulated. As with all tags, the source material is often unclear in how they provided the data; we attempt to figure this out from the original publication when possible, but this cannot always be determined.
 
@@ -97,7 +97,7 @@ Data quantities their own set of standard fields:
 | `model` | A list of integer aliases of which models the data orignated from | yes
 | `realization` | A numeric ID for the realization of the denoted model (e.g. from Monte Carlo) | yes
 
-Currently, the OSC explicitly tracks the following quantities for each supernova, if available (items marked with a 🌟 are supernova-specific):
+Currently, the OAC explicitly tracks the following quantities for each entry, if available (items marked with a 🌟 are transient-specific):
 
 | Quantity | Description | Kinds
 | :--- | :--- | :---
@@ -213,4 +213,4 @@ And finally for spectra, these fields are used:
 | `exclude` | Suggested wavelengths (in &#8491;) to exclude when plotting/analyzing, can be `above`, `below`, or `range`, e.g. `"above":"10000"` would suggested excluding data from wavelengths greater than 10,000 &#8491;, `"range":["8000","8100"]` would suggested excluding data from wavelengths in between 8,000 and 8,100 &#8491; | yes
 | `source` | A list of integer aliases to sources for the data | no
 
-So long as it is reasonable, the OSC is open to adding more field names should additional information need to be stored in an event file beyond the quantities and data we have chosen to track here, please contact us and let us know if you have any suggestions on how the standard format can be improved.
+So long as it is reasonable, the OAC is open to adding more field names should additional information need to be stored in an event file beyond the quantities and data we have chosen to track here, please contact us and let us know if you have any suggestions on how the standard format can be improved.
