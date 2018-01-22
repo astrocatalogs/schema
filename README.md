@@ -1,4 +1,4 @@
-# Open Astronomy Catalog Schema v0.1
+# Open Astronomy Catalog Schema v1.0
 
 This document describes the standard Open Astronomy Catalog (OAC) JSON schema.
 
