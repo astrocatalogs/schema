@@ -33,6 +33,7 @@ Sources of data contain several fields:
 `alias` | Integer unique to this source to be used as an alias | no
 `url` | Web address of source | yes
 `bibcode` | 19 character NASA ADS bibcode | yes
+`doi` | Digital object identifier | yes
 `arxivid` | ArXiv ID number | yes
 `secondary` | Boolean specifying if source collected rather than generated data | yes
 `acknowledgment` | Acknowledgment requested by source if data is used in publication | yes
@@ -154,6 +155,8 @@ For all photometry, count rates (and their errors) can be specified:
 | :--- | :--- | :---
 | `countrate` | Counts per unit time. This could be literal counts detected, or a flux normalized to a zero point | yes
 | `e_countrate` | Error in the count rate | yes
+| `e_lower_countrate` | Negative error in the count rate | yes
+| `e_upper_countrate` | Positive error in the count rate | yes
 
 For IR/optical/UV photometry specifically, typical field names are:
 
@@ -180,6 +183,8 @@ For radio, a few more field names are used:
 | `u_frequency` | Unit for frequency | yes
 | `fluxdensity` | Flux density | no
 | `e_fluxdensity` | Error in flux density | yes
+| `e_lower_fluxdensity` | Negative error in the flux density | yes
+| `e_upper_fluxdensity` | Positive error in the flux density | yes
 | `u_fluxdensity` | Unit for flux density | yes
 | `upperlimit` | Measurement is an upper limit | yes
 
@@ -194,6 +199,8 @@ For X-ray, the additional set of fields are:
 | `photonindex` | Power-law assumed to convert counts to flux | yes
 | `nhmw` | Milky Way hydrogen column density | yes
 | `e_flux` | Error in the flux | yes
+| `e_lower_flux` | Negative error in the flux | yes
+| `e_upper_flux` | Positive error in the flux | yes
 | `u_flux` | Unit for flux | yes
 | `upperlimit` | Measurement is an upper limit | yes
 
