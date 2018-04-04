@@ -78,7 +78,7 @@ where in this example we have two different redshift values quoted from three di
 
 In general, the data stored in a given JSON file are presented in the observer frame, uncorrected for extinction or redshift, with times provided in MJD or as a calendar date (YYYY/MM/DD). In some instances, only corrected data will be available, or will be available as a supplement to the raw data, but in these cases the corrected data should be tagged with additional qualifiers (e.g. `kcorrected`, `deredshifted`, etc.) to indicate that it has been manipulated. As with all tags, the source material is often unclear in how they provided the data; we attempt to figure this out from the original publication when possible, but this cannot always be determined.
 
-Data quantities their own set of standard fields:
+Data quantities have their own set of standard fields:
 
 | Field | Value | Optional?
 | :--- | :--- | :---
@@ -94,7 +94,7 @@ Data quantities their own set of standard fields:
 | `description` | A description of the quantity | yes
 | `probability` | Probability of the given value being true | yes
 | `source` | A list of integer aliases to sources for the data | no
-| `model` | A list of integer aliases of which models the data orignated from | yes
+| `model` | A list of integer aliases of which models the data originated from | yes
 | `realization` | A numeric ID for the realization of the denoted model (e.g. from Monte Carlo) | yes
 
 Currently, the OAC explicitly tracks the following quantities for each entry, if available (items marked with a 🌟 are transient-specific):
@@ -145,7 +145,7 @@ Photometry and spectra are stored in a similar way, but have different and many 
 | `reducer` | Person(s) who reduced the observation | yes
 | `includeshost` | Host galaxy light not subtracted from observation | yes
 | `source` | A list of integer aliases to sources for the data | no
-| `model` | A list of integer aliases of which models the data orignated from | yes
+| `model` | A list of integer aliases of which models the data originated from | yes
 | `realization` | A numeric ID for the realization of the denoted model (e.g. from Monte Carlo) | yes
 
 For all photometry, count rates (and their errors) can be specified:
