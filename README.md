@@ -90,6 +90,8 @@ Data quantities have their own set of standard fields:
 | `lowerlimit` | Value is a lower limit | yes
 | `upperlimit` | Value is an upper limit | yes
 | `u_value` | The unit of the value | yes
+| `u_e_value` | The unit of the error in the value (if different from `u_value`) | yes
+| `correlation` | Correlation of value with another value (structure described below) | yes
 | `kind` | Variant of the quantity | yes
 | `derived` | Quantity is derived from other data present in file | yes
 | `description` | A description of the quantity | yes
@@ -97,6 +99,15 @@ Data quantities have their own set of standard fields:
 | `source` | A list of integer aliases to sources for the data | no
 | `model` | A list of integer aliases of which models the data originated from | yes
 | `realization` | A numeric ID for the realization of the denoted model (e.g. from Monte Carlo) | yes
+
+Correlations between quantities can be specified with the correlation object, which has the following structre:
+
+| Field | Value | Optional?
+| :--- | :--- | :---
+| `quantity` | Name of quantity this quantity is correlated with | no
+| `value` | The value of the correlation | no
+| `kind` | The kind of correlation presented (e.g. `"Pearson"`) | yes
+| `derived` | Correlation is derived from other data present in file | yes
 
 Currently, the OAC explicitly tracks the following quantities for each entry, if available (items marked with a 🌟 are transient-specific):
 
@@ -107,8 +118,11 @@ Currently, the OAC explicitly tracks the following quantities for each entry, if
 | `error` | Known errors in sources of data that are ignored on import |
 | `ra` | Right ascension of event in hours (`hh:mm:ss`) |
 | `dec` | Declination of event in degrees |
-| `discoverdate` | Date that the event was first observed 🌟 |
+| `discoverdate` | Date that the event was first observed |
 | `maxdate` | Date of the event's maximum light |
+| `maxabsmag` | Maximum absolute magnitude |
+| `maxappmag` | Maximum apparent magnitude |
+| `maxband` | Band that maximum was determined from |
 | `maxvisualabsmag` | Maximum visual absolute magnitude 🌟 |
 | `maxvisualappmag` | Maximum visual apparent magnitude 🌟 |
 | `maxvisualband` | Band of maximum visual magnitude 🌟 |
@@ -125,9 +139,6 @@ Currently, the OAC explicitly tracks the following quantities for each entry, if
 | `hostdec` | Declination of the host galaxy in degrees |
 | `hostoffsetang` | Offset angle between host and event |
 | `hostoffsetdist` | Offset angular diameter distance between host and event |
-| `maxappmag` | Maximum apparent magnitude |
-| `maxband` | Band that maximum was determined from |
-| `maxabsmag` | Maximum absolute magnitude |
 
 Photometry and spectra are stored in a similar way, but have different and many more standard field names. Both photometry and spectra share a few fields:
 
