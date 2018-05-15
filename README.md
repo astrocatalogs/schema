@@ -29,16 +29,16 @@ To maintain precision across JSON readers, it is recommended that numerical valu
 
 Sources of data contain several fields:
 
-| Field | Value | Optional?
+| Field | Description | Type | Optional?
 | :--- | :--- | :---
-`name` | Source name, e.g. "Catchpole et al. 1989" | no
-`alias` | Integer unique to this source to be used as an alias | no
-`url` | Web address of source | yes
-`bibcode` | 19 character NASA ADS bibcode | yes
-`doi` | Digital object identifier | yes
-`arxivid` | ArXiv ID number | yes
-`secondary` | Boolean specifying if source collected rather than generated data | yes
-`acknowledgment` | Acknowledgment requested by source if data is used in publication | yes
+`name` | Source name, e.g. "Catchpole et al. 1989" | String | no
+`alias` | ID number unique to this source to be used as an alias | Integer | no
+`url` | Web address of source | String | yes
+`bibcode` | 19 character NASA ADS bibcode | String | yes
+`doi` | Digital object identifier | String | yes
+`arxivid` | ArXiv ID number | String | yes
+`secondary` | Did this source collect the data from another source (i.e. second-hand source) | Boolean | yes
+`acknowledgment` | Acknowledgment requested by source if data is used in publication | String | yes
 
 The sources object contains an array of such objects:
 
@@ -98,8 +98,8 @@ Data quantities have their own set of standard fields:
 | `derived` | Quantity is derived from other data present in file | Boolean | yes
 | `description` | A description of the quantity | String | yes
 | `probability` | Probability of the given value being true | Float | yes
-| `source` | A list of integer aliases to sources for the data | String | no
-| `model` | A list of integer aliases of which models the data originated from | String | yes
+| `source` | Comma-delimited list of integer aliases to sources for the data | String | no
+| `model` | Comma-delimited list of integer aliases of which models the data originated from | String | yes
 | `realization` | A numeric ID for the realization of the denoted model (e.g. from Monte Carlo) | Integer | yes
 
 Correlations between quantities can be specified with the correlation object, which has the following structre:
@@ -158,8 +158,8 @@ Photometry and spectra are stored in a similar way, but have different and many 
 | `observer` | Person(s) who conducted the observation | String | yes
 | `reducer` | Person(s) who reduced the observation | String | yes
 | `includeshost` | Host galaxy light not subtracted from observation | Boolean | yes
-| `source` | A list of integer aliases to sources for the data | String | no
-| `model` | A list of integer aliases of which models the data originated from | String | yes
+| `source` | Comma-delimited list of integer aliases to sources for the data | String | no
+| `model` | Comma-delimited list of integer aliases of which models the data originated from | String | yes
 | `realization` | A numeric ID for the realization of the denoted model (e.g. from Monte Carlo) | Integer | yes
 
 For all photometry, count rates (and their errors) can be specified:
@@ -232,6 +232,6 @@ And finally for spectra, these fields are used:
 | `dereddened` | Data is known to have been dereddened | Boolean | yes
 | `vacuumwavelengths` | Wavelengths reported are what they would be if measured in a vacuum (as opposed to air) | Boolean | yes
 | `exclude` | Suggested wavelengths (in &#8491;) to exclude when plotting/analyzing, can be `above`, `below`, or `range`, e.g. `"above":"10000"` would suggested excluding data from wavelengths greater than 10,000 &#8491;, `"range":["8000","8100"]` would suggested excluding data from wavelengths in between 8,000 and 8,100 &#8491; | Object | yes
-| `source` | A list of integer aliases to sources for the data | String | no
+| `source` | Comma-delimited list of integer aliases to sources for the data | String | no
 
 So long as it is reasonable, the OAC is open to adding more field names should additional information need to be stored in an event file beyond the quantities and data we have chosen to track here, please contact us and let us know if you have any suggestions on how the standard format can be improved.
