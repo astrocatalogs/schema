@@ -228,6 +228,7 @@ And finally for spectra, these fields are used:
 | `filename` | Name of file spectra was extracted from | yes
 | `deredshifted` | Data is known to have been deredshifted from observer frame | yes
 | `dereddened` | Data is known to have been dereddened | yes
+| `vacuumwavelengths` | Wavelengths reported are what they would be if measured in a vacuum (as opposed to air) | yes
 | `exclude` | Suggested wavelengths (in &#8491;) to exclude when plotting/analyzing, can be `above`, `below`, or `range`, e.g. `"above":"10000"` would suggested excluding data from wavelengths greater than 10,000 &#8491;, `"range":["8000","8100"]` would suggested excluding data from wavelengths in between 8,000 and 8,100 &#8491; | yes
 | `source` | A list of integer aliases to sources for the data | no
 
