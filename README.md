@@ -220,7 +220,7 @@ For X-ray, the additional set of fields are:
 And finally for spectra, these fields are used:
 
 | Field | Value | Type | Optional?
-| :--- | :--- | :---
+| :--- | :--- | :--- | :---
 | `data` | Array of wavelengths, fluxes, and (optionally) errors | Nx2 or Nx3 array | no
 | `u_wavelengths` | Unit for wavelength | String | no
 | `u_fluxes` | Unit for fluxes | String | no
