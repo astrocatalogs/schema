@@ -25,6 +25,8 @@ As JSON is a serialized format, *field order does not matter*, but it is recomme
 
 Sources are extremely important in the OAC schema, and every single piece of data added to an event JSON file **must have a source attribution**. Published data sources are preferred over secondary sources (aggregators would fall into a secondary source category), but if the data was collected by a secondary source intermediate to being collected by the creator of the file, it is best practice to also include these sources in the source list.
 
+To maintain precision across JSON readers, it is recommended that numerical values should be stored as *strings*, rather than as floats or integers, even if the field type is float/integer. This enables the user to maintain precision on their imported valued with packages such as `Decimal`, as opposed to potentially losing precision upon loading the JSON.
+
 Sources of data contain several fields:
 
 | Field | Value | Optional?
@@ -217,19 +219,19 @@ For X-ray, the additional set of fields are:
 
 And finally for spectra, these fields are used:
 
-| Field | Value | Optional?
+| Field | Value | Type | Optional?
 | :--- | :--- | :---
-| `data` | Nx2 or Nx3 array of wavelengths, fluxes, and (optionally) errors | no
-| `u_wavelengths` | Unit for wavelength | no
-| `u_fluxes` | Unit for fluxes | no
-| `u_errors` | Unit for flux errors | yes
-| `snr` | Signal to noise ratio | yes
-| `airmass` | Airmass through which spectrum was collected | yes
-| `filename` | Name of file spectra was extracted from | yes
-| `deredshifted` | Data is known to have been deredshifted from observer frame | yes
-| `dereddened` | Data is known to have been dereddened | yes
-| `vacuumwavelengths` | Wavelengths reported are what they would be if measured in a vacuum (as opposed to air) | yes
-| `exclude` | Suggested wavelengths (in &#8491;) to exclude when plotting/analyzing, can be `above`, `below`, or `range`, e.g. `"above":"10000"` would suggested excluding data from wavelengths greater than 10,000 &#8491;, `"range":["8000","8100"]` would suggested excluding data from wavelengths in between 8,000 and 8,100 &#8491; | yes
-| `source` | A list of integer aliases to sources for the data | no
+| `data` | Array of wavelengths, fluxes, and (optionally) errors | Nx2 or Nx3 array | no
+| `u_wavelengths` | Unit for wavelength | String | no
+| `u_fluxes` | Unit for fluxes | String | no
+| `u_errors` | Unit for flux errors | String | yes
+| `snr` | Signal to noise ratio | Float | yes
+| `airmass` | Airmass through which spectrum was collected | Float | yes
+| `filename` | Name of file spectra was extracted from | String | yes
+| `deredshifted` | Data is known to have been deredshifted from observer frame | Boolean | yes
+| `dereddened` | Data is known to have been dereddened | Boolean | yes
+| `vacuumwavelengths` | Wavelengths reported are what they would be if measured in a vacuum (as opposed to air) | Boolean | yes
+| `exclude` | Suggested wavelengths (in &#8491;) to exclude when plotting/analyzing, can be `above`, `below`, or `range`, e.g. `"above":"10000"` would suggested excluding data from wavelengths greater than 10,000 &#8491;, `"range":["8000","8100"]` would suggested excluding data from wavelengths in between 8,000 and 8,100 &#8491; | Object | yes
+| `source` | A list of integer aliases to sources for the data | String | no
 
 So long as it is reasonable, the OAC is open to adding more field names should additional information need to be stored in an event file beyond the quantities and data we have chosen to track here, please contact us and let us know if you have any suggestions on how the standard format can be improved.
