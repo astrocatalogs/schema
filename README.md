@@ -203,23 +203,23 @@ For radio, a few more field names are used:
 
 For X-ray, the additional set of fields are:
 
-| Field | Value | Optional?
-| :--- | :--- | :---
-| `energy` | Detector energy (can be a two-element array for range) | yes
-| `u_energy` | Unit of energy | yes
-| `flux` | Energy flux | no
-| `unabsorbedflux` | Unabsorbed energy flux | yes
-| `photonindex` | Power-law assumed to convert counts to flux | yes
-| `nhmw` | Milky Way hydrogen column density | yes
-| `e_flux` | Error in the flux | yes
-| `e_lower_flux` | Negative error in the flux | yes
-| `e_upper_flux` | Positive error in the flux | yes
-| `u_flux` | Unit for flux | yes
-| `upperlimit` | Measurement is an upper limit | yes
+| Field | Description | Type | Optional?
+| :--- | :--- | :--- | :---
+| `energy` | Detector energy (can be a two-element array for range) | Float or Array | yes
+| `u_energy` | Unit of energy | String | yes
+| `flux` | Energy flux | Float | no
+| `unabsorbedflux` | Unabsorbed energy flux | Float | yes
+| `photonindex` | Power-law assumed to convert counts to flux | Float | yes
+| `nhmw` | Milky Way hydrogen column density | Float | yes
+| `e_flux` | Error in the flux | Float | yes
+| `e_lower_flux` | Negative error in the flux | Float | yes
+| `e_upper_flux` | Positive error in the flux | Float | yes
+| `u_flux` | Unit for flux | String | yes
+| `upperlimit` | Measurement is an upper limit | Boolean | yes
 
 And finally for spectra, these fields are used:
 
-| Field | Value | Type | Optional?
+| Field | Description | Type | Optional?
 | :--- | :--- | :--- | :---
 | `data` | Array of wavelengths, fluxes, and (optionally) errors | Nx2 or Nx3 array | no
 | `u_wavelengths` | Unit for wavelength | String | no
