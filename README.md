@@ -85,7 +85,7 @@ Data quantities have their own set of standard fields:
 
 | Field | Description | Type | Optional?
 | :--- | :--- | :--- | :---
-| `value` | The value of the quantity | String or Float | no
+| `value` | The value of the quantity | String, Float, or Array | no
 | `e_value` | The error associated with the value | Float | yes
 | `e_lower_value` | The lower error bound associated with the value | Float | yes
 | `e_upper_value` | The upper error bound associated with the value | Float | yes
