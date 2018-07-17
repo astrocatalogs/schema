@@ -157,6 +157,7 @@ Photometry and spectra are stored in a similar way, but have different and many 
 | `observatory` | Observatory used for observation | String | yes
 | `observer` | Person(s) who conducted the observation | String | yes
 | `reducer` | Person(s) who reduced the observation | String | yes
+| `host` | Observation is that of the host galaxy, not the object | Boolean | yes
 | `includeshost` | Host galaxy light not subtracted from observation | Boolean | yes
 | `source` | Comma-delimited list of integer aliases to sources for the data | String | no
 | `model` | Comma-delimited list of integer aliases of which models the data originated from | String | yes
