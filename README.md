@@ -182,6 +182,7 @@ For IR/optical/UV photometry specifically, typical field names are:
 | `e_upper_magnitude` | Upper (i.e. more positive) error in the magnitude | Float | yes
 | `zeropoint` | Zero point value used to covert flux to magnitudes | Float | yes
 | `band` | Photometric band filter used | String | yes
+| `bandset` | Set of bands that filter is drawn from (e.g. Johnson, Swift) | String | yes
 | `system` | Photometric system used | String | yes
 | `upperlimit` | Measurement is an upper limit | Boolean | yes
 | `upperlimitsigma` | Number of sigmas upper limit corresponds to | Float | yes
