@@ -157,6 +157,7 @@ Photometry and spectra are stored in a similar way, but have different and many 
 | `observatory` | Observatory used for observation | String | yes
 | `observer` | Person(s) who conducted the observation | String | yes
 | `reducer` | Person(s) who reduced the observation | String | yes
+| `airmass` | Airmass through which spectrum was collected | Float | yes
 | `host` | Observation is that of the host galaxy, not the object | Boolean | yes
 | `includeshost` | Host galaxy light not subtracted from observation | Boolean | yes
 | `source` | Comma-delimited list of integer aliases to sources for the data | String | no
@@ -228,7 +229,6 @@ And finally for spectra, these fields are used:
 | `u_fluxes` | Unit for fluxes | String | no
 | `u_errors` | Unit for flux errors | String | yes
 | `snr` | Signal to noise ratio | Float | yes
-| `airmass` | Airmass through which spectrum was collected | Float | yes
 | `filename` | Name of file spectra was extracted from | String | yes
 | `deredshifted` | Data is known to have been deredshifted from observer frame | Boolean | yes
 | `dereddened` | Data is known to have been dereddened | Boolean | yes
