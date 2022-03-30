@@ -30,15 +30,15 @@ To maintain precision across JSON readers, it is recommended that numerical valu
 Sources of data contain several fields:
 
 | Field | Description | Type | Optional?
-| :--- | :--- | :---
-`name` | Source name, e.g. "Catchpole et al. 1989" | String | no
-`alias` | ID number unique to this source to be used as an alias | Integer | no
-`url` | Web address of source | String | yes
-`bibcode` | 19 character NASA ADS bibcode | String | yes
-`doi` | Digital object identifier | String | yes
-`arxivid` | ArXiv ID number | String | yes
-`secondary` | Did this source collect the data from another source (i.e. second-hand source) | Boolean | yes
-`acknowledgment` | Acknowledgment requested by source if data is used in publication | String | yes
+| :--- | :--- | :--- | ---
+| `name` | Source name, e.g. "Catchpole et al. 1989" | String | no
+| `alias` | ID number unique to this source to be used as an alias | Integer | no
+| `url` | Web address of source | String | yes
+| `bibcode` | 19 character NASA ADS bibcode | String | yes
+| `doi` | Digital object identifier | String | yes
+| `arxivid` | ArXiv ID number | String | yes
+| `secondary` | Did this source collect the data from another source (i.e. second-hand source) | Boolean | yes
+| `acknowledgment` | Acknowledgment requested by source if data is used in publication | String | yes
 
 The sources object contains an array of such objects:
 
